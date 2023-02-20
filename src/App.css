@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+
+.posts-section {
+    
 }
 
-.App-logo {
-  height: 20vmin;
-  pointer-events: none;
+.posts-section__title {
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.posts-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.post {
+    border: 1px solid blue;
+    width: 50%;
+    padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.post:not(:first-child) {
+    margin-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.post__header {
+    
+}
+
+.post__actions {
+    margin-top: 10px;
+}
+
+.button {
+    border-radius: 2px;
+    padding: 8px;
+    background-color: whitesmoke;
+    border: none;
+
+}
+
+.button-delete {
+    color: whitesmoke;
+    background-color: red;
+}
+
+.button-delete:hover {
+    cursor: pointer;
+    background-color: #cc0000;
+}
+
+.button-delete:active {
+    background-color: red;
+}
+
+.button-create {
+    background-color: lightgreen;
+}
+
+.button-create:hover {
+    cursor: pointer;
+    background-color: limegreen;
+}
+
+.button-create:active {
+    background-color: lightgreen;
+}
+
+
+.post-creation-section {
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.post-creation-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input {
+    margin: 8px;
+    padding: 8px;
+    min-width: 400px;
+    font-family: sans-serif;
+
+}
+
+.simple-input {
+}
+
+.simple-textarea {
+    min-height: 200px;
 }

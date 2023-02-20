@@ -1,21 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-import githubPNG from './github.png'
+import './App.css'
+import React, {useState} from 'react';
+import PostsList from './components/PostsList';
+import PostForm from './components/PostForm';
 
 function App() {
+  const [posts, setPosts] = useState([{title: 'Ученье свет', 
+                                    description: 'Обретение нужных знаний - шаг навстречу к своей цели.', 
+                                    id: Date.now()}]);
+
+  const createPost = (post) => {
+    setPosts([...posts, post]);
+  };
+
+  const deletePost = (post) => {
+    setPosts(posts.filter(p => p.id !== post.id));
+  };    
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={githubPNG} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://github.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          My GitHub
-        </a>
-      </header>
+        <PostForm createPost={createPost}/>
+        {posts.length !== 0 ? <PostsList removePost={deletePost} posts={posts}/>
+        : <div style={{textAlign: 'center', marginTop: '10px'}}>Здесь пока нет постов.</div>}
+        
     </div>
   );
 }
