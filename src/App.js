@@ -1,28 +1,27 @@
 import './App.css'
-import React, {useState} from 'react';
-import PostsList from './components/PostsList';
-import PostForm from './components/PostForm';
+import React from 'react';
+import {Link, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router } from 'react-router-dom';
+import PostsPage from "./components/PostsPage";
+import PostForm from "./components/PostForm";
 
 function App() {
-  const [posts, setPosts] = useState([{title: 'Ученье свет', 
-                                    description: 'Обретение нужных знаний - шаг навстречу к своей цели.', 
-                                    id: Date.now()}]);
-
-  const createPost = (post) => {
-    setPosts([...posts, post]);
-  };
-
-  const deletePost = (post) => {
-    setPosts(posts.filter(p => p.id !== post.id));
-  };    
 
   return (
-    <div className="App">
-        <PostForm createPost={createPost}/>
-        {posts.length !== 0 ? <PostsList removePost={deletePost} posts={posts}/>
-        : <div style={{textAlign: 'center', marginTop: '10px'}}>Здесь пока нет постов.</div>}
-        
-    </div>
+
+            <div className="App">
+                <Router>
+                    <Routes>
+                        <Route path={"/"} element={<PostsPage/>}/>
+                        <Route path={"/dialogs"} element={<div>Dialogs</div>}/>
+                    </Routes>
+                </Router>
+                {/*<nav>*/}
+                {/*    <Link to={"/"}>Posts</Link>*/}
+                {/*        <Link to={"/dialogs"}>Dialogs</Link>*/}
+                {/*</nav>*/}
+            </div>
+
   );
 }
 
