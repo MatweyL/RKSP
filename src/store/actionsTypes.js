@@ -1,0 +1,2 @@
+export const TERMS_APPROVE = 'TERMS_APPROVE';
+export const TERMS_DISAPPROVE = 'TERMS_DISAPPROVE';
