@@ -53,5 +53,5 @@ const deletePost = (post) => {
 module.exports = {
     getPosts,
     createPost,
-    deletePost: deletePost
+    deletePost
 };

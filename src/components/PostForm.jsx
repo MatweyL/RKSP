@@ -1,4 +1,5 @@
 import React, {useState}  from "react";
+import {get_user_id_from_token} from "../services/utils";
 
 const PostForm = ({createPost, ...props}) => {
     const [post, setPost] = useState({title: '', 
@@ -7,7 +8,8 @@ const PostForm = ({createPost, ...props}) => {
         e.preventDefault();
         const newPost = {
             ...post,
-            id: Date.now()
+            id: Date.now(),
+            user_id: get_user_id_from_token(props.token)
         };
         createPost(newPost);
         };

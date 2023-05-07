@@ -26,13 +26,15 @@ const PostsPage = (props) => {
     };
 
     return (<div>
-                <PostForm createPost={addPost}/>
+                <PostForm token={props.token} createPost={addPost}/>
                 {
-                    posts.length !== 0 ? <PostsList removePost={removePost} posts={posts}/> :
+                    posts.length !== 0 ? <PostsList token={props.token} removePost={removePost} posts={posts}/> :
                     <div style={{textAlign: 'center', marginTop: '10px'}}>Здесь пока нет постов.</div>
                 }
             </div>
 );
 };
+
+
 
 export default PostsPage;

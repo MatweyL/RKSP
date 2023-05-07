@@ -94,3 +94,28 @@
 .simple-textarea {
     min-height: 200px;
 }
+
+.user {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid darkslateblue;
+}
+
+.user-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-row__title {
+    font-weight: bold;
+}
+
+
+.users-list {
+    margin: auto;
+    max-width: 800px;
+}
+
+.nav-link {
+    margin-left: 10px;
+}
